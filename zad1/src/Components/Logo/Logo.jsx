@@ -1,7 +1,7 @@
-const Logo = (props) => {
+const Logo = ({ href, src, className, alt }) => {
   return (
-    <a href={props.href} target="_blank">
-      <img src={props.src} className={props.className} alt={props.alt} />
+    <a href={href} target="_blank">
+      <img src={src} className={className} alt={alt} />
     </a>
   )
 }
