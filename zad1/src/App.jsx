@@ -3,6 +3,8 @@ import reactLogo from "./assets/react.svg"
 import "./App.css"
 import Logo from "./Components/Logo/Logo"
 import Headline1 from "./Components/Headlines/Headline1"
+import Card from "./Components/Card/Card"
+import Pararaph from "./Components/Paragraph/Paragraph"
 
 function App() {
   return (
@@ -29,14 +31,25 @@ function App() {
       </div>
       <Headline1 value="Vite + React" />
       {/* <h1>Vite + React</h1> */}
-      <div className="card">
+      <Card className={"card"}>
+        <Pararaph
+          className={"read-the-docs"}
+          text={"Click on the Vite and React logos to learn more"}
+        />
+        <Pararaph
+          className={"read-the-docs"}
+          text={"Click on the Vite and React logos to learn more"}
+        />
+      </Card>
+
+      {/* <div className="card">
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
-      </div>
-      <p className="read-the-docs">
+      </div> */}
+      {/* <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
     </div>
   )
 }
