@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       {array.map((element) => {
         return (
-          <div>
+          <div key={element.id}>
             <p>{element.name}</p>
             <p>{element.quantity}</p>
             <p>{`${element.price} cebulionów`}</p>
