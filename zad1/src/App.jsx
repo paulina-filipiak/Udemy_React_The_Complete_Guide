@@ -7,9 +7,48 @@ import Card from "./Components/Card/Card"
 import Pararaph from "./Components/Paragraph/Paragraph"
 
 function App() {
+  const array = [
+    {
+      id: "produkt1",
+      name: "Banan",
+      quantity: 3,
+      price: 10,
+      metadata: {
+        whatever: "cokolwiek",
+      },
+    },
+    {
+      id: "produkt2",
+      name: "Japko",
+      quantity: 4,
+      price: 12,
+      metadata: {
+        whatever: "cokolwiek2",
+      },
+    },
+    {
+      id: "produkt3",
+      name: "Orzech",
+      quantity: 6,
+      price: 40,
+      metadata: {
+        whatever: "cokolwiek3",
+      },
+    },
+  ]
   return (
     <div className="App">
-      <div>
+      {array.map((element) => {
+        return (
+          <div>
+            <p>{element.name}</p>
+            <p>{element.quantity}</p>
+            <p>{`${element.price} cebulionów`}</p>
+            <span>{element.metadata.whatever}</span>
+          </div>
+        )
+      })}
+      {/* <div>
         <Logo
           href="https://vitejs.dev"
           src="/vite.svg"
@@ -22,15 +61,8 @@ function App() {
           className="logo react"
           alt="React logo"
         />
-        {/* <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a> */}
-        {/* <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a> */}
       </div>
       <Headline1 value="Vite + React" />
-      {/* <h1>Vite + React</h1> */}
       <Card className={"card"}>
         <Pararaph
           className={"read-the-docs"}
@@ -40,16 +72,7 @@ function App() {
           className={"read-the-docs"}
           text={"Click on the Vite and React logos to learn more"}
         />
-      </Card>
-
-      {/* <div className="card">
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div> */}
-      {/* <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
+      </Card> */}
     </div>
   )
 }
