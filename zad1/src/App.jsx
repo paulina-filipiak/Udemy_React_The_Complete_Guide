@@ -11,6 +11,7 @@ function App() {
     {
       id: "produkt1",
       name: "Banan",
+      items: [],
       quantity: 3,
       price: 10,
       metadata: {
@@ -30,6 +31,7 @@ function App() {
       id: "produkt3",
       name: "Orzech",
       quantity: 6,
+      items: [1, 5, 6],
       price: 40,
       metadata: {
         whatever: "cokolwiek3",
@@ -39,6 +41,13 @@ function App() {
   return (
     <div className="App">
       {array.map((element) => {
+        if (!element.items) {
+          return null
+        } else {
+          if (element.items.length === 0) {
+            return <p>Nie ma itemsów!</p>
+          }
+        }
         return (
           <div key={element.id}>
             <p>{element.name}</p>
