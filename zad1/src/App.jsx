@@ -5,6 +5,7 @@ import Logo from "./Components/Logo/Logo"
 import Headline1 from "./Components/Headlines/Headline1"
 import Card from "./Components/Card/Card"
 import Pararaph from "./Components/Paragraph/Paragraph"
+import StyledButton from "./Components/Button/Button.styled"
 
 function App() {
   const array = [
@@ -40,6 +41,7 @@ function App() {
   ]
   return (
     <div className="App">
+      <StyledButton>Click me!</StyledButton>
       {array.map((element) => {
         if (!element.items) {
           return null
