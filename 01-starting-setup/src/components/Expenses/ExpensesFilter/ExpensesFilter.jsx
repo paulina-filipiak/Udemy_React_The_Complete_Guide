@@ -2,14 +2,14 @@ import React from "react"
 
 import "./ExpensesFilter.css"
 
-const ExpensesFilter = ({ onFilterInput, selected }) => {
+const ExpensesFilter = ({ onFilterInput, inputValue }) => {
 	return (
 		<div className="expenses-filter">
 			<div className="expenses-filter__control">
 				<label>Filter by year</label>
 				<select
-					value={selected}
-					onInput={(event) => {
+					value={inputValue}
+					onChange={(event) => {
 						onFilterInput(event.target.value)
 					}}>
 					<option value="2022">2022</option>
