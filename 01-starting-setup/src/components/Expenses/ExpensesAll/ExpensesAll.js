@@ -20,14 +20,18 @@ function ExpensesAll(props) {
 	return (
 		<Card className="expenses">
 			<ExpensesFilter selected={inputValue} onFilterInput={onFilterInput} />
-			{filteredData.map((expense) => (
-				<ExpenseItem
-					key={expense.id}
-					title={expense.title}
-					amount={expense.amount}
-					date={expense.date}
-				/>
-			))}
+			{filteredData.length === 0 ? (
+				<p>No expenses found.</p>
+			) : (
+				filteredData.map((expense) => (
+					<ExpenseItem
+						key={expense.id}
+						title={expense.title}
+						amount={expense.amount}
+						date={expense.date}
+					/>
+				))
+			)}
 		</Card>
 	)
 }
