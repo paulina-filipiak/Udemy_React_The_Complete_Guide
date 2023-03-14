@@ -15,6 +15,7 @@ function ExpensesAll(props) {
 			<ExpensesFilter selected={inputValue} onFilterInput={onFilterInput} />
 			{props.expenses.map((expense) => (
 				<ExpenseItem
+					key={expense.id}
 					title={expense.title}
 					amount={expense.amount}
 					date={expense.date}
