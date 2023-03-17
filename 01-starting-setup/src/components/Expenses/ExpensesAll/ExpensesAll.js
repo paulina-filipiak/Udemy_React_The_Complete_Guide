@@ -7,29 +7,28 @@ import { useState } from "react"
 
 function ExpensesAll(props) {
 	const [inputValue, setinputValue] = useState("2020")
-	const [filteredData, setFilteredData] = useState(props.expenses)
+	// const [filteredData, setFilteredData] = useState(props.items)
 
 	const onFilterInput = (queryValue) => {
 		setinputValue(queryValue)
-		const filtered = props.expenses.filter(
-			(expense) => expense.date.getFullYear() == queryValue
-		)
-		setFilteredData(filtered)
+		// const filtered = props.items.filter(
+		// 	(expense) => expense.date.getFullYear().toString() === inputValue
+		// )
+		// setFilteredData(filtered)
 	}
 	console.log(inputValue)
 	return (
 		<Card className="expenses">
 			<ExpensesFilter selected={inputValue} onFilterInput={onFilterInput} />
-			{filteredData.length === 0 && <p>No expenses found.</p>}
-			{filteredData.length > 0 &&
-				filteredData.map((expense) => (
-					<ExpenseItem
-						key={expense.id}
-						title={expense.title}
-						amount={expense.amount}
-						date={expense.date}
-					/>
-				))}
+			{/* {filteredData.length === 0 && <p>No expenses found.</p>} */}
+			{props.items.map((item) => (
+				<ExpenseItem
+					key={item.id}
+					title={item.title}
+					amount={item.amount}
+					date={item.date}
+				/>
+			))}
 		</Card>
 	)
 }
