@@ -19,7 +19,6 @@ function ExpensesAll(props) {
 	return (
 		<Card className="expenses">
 			<ExpensesFilter selected={inputValue} onFilterInput={onFilterInput} />
-			{/* {filteredData.length === 0 && <p>No expenses found.</p>} */}
 			{inputValue === "" &&
 				props.items.map((item) => (
 					<ExpenseItem
