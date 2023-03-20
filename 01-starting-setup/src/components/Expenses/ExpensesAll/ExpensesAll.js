@@ -1,6 +1,7 @@
 import ExpenseItem from "../ExpenseItem/ExpenseItem"
 import Card from "../../UI/Card/Card"
 import "../../UI/Card/card.css"
+import ExpensesChart from "../ExpensesChart/ExpensesChart"
 import "./ExpensesAll.css"
 import ExpensesFilter from "../ExpensesFilter/ExpensesFilter"
 import { useState } from "react"
@@ -19,6 +20,7 @@ function ExpensesAll(props) {
 	return (
 		<Card className="expenses">
 			<ExpensesFilter selected={inputValue} onFilterInput={onFilterInput} />
+			<ExpensesChart expenses={filtered} />
 			{inputValue === "" &&
 				props.items.map((item) => (
 					<ExpenseItem
